@@ -12,6 +12,10 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.13.5"
+    "express-validator": "^6.12.1",
+    "http": "^0.0.1-security",
+    "mongoose": "^5.13.5",
+    "random-animal-name": "^0.1.0",
+    "socket.io": "^4.1.3"
   }
 }
