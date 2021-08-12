@@ -1,0 +1,11 @@
+.selling-button {
+  background-color: #0061df;
+  border-radius: 20px;
+  padding: 8px 22px;
+  border: none;
+  color: white;
+}
+
+.selling-button:hover {
+  background-color: rgb(6, 78, 172);
+}

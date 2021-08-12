@@ -1,0 +1,34 @@
+.comment-comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.comment-comment-header {
+  display: flex;
+  align-items: center;
+}
+
+.comment-comment-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  margin-left: 8px;
+}
+
+.comment-comment-text {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+}
+.comment-comment-date {
+  color: #5e5c5c;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 15px;
+}

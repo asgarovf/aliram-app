@@ -1,0 +1,71 @@
+.postform--input-wrapper {
+  display: flex;
+}
+
+.postform--input {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.postform--input input {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #0061df;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  color: #1b1c1d;
+  padding-left: 46px;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  padding-right: 46px;
+}
+
+.postform--input input:focus,
+.postform--input input:active {
+  outline: none !important;
+}
+
+.postform--input input::placeholder {
+  color: #7e7f85;
+}
+
+.postform--search-icon {
+  pointer-events: none;
+  position: absolute;
+  left: 20px;
+  bottom: 17px;
+}
+
+.postform--submit-button {
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #0061df;
+  border-color: #0061df;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 26px;
+  color: white;
+  transition: 0.15s linear;
+}
+
+.postform--submit-button:hover {
+  background-color: rgb(6, 78, 172);
+  transition: 0.15s linear;
+}
+
+.postform--submit-button:active {
+  background-color: rgb(6, 78, 172);
+}
