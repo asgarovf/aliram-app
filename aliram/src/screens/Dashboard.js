@@ -74,7 +74,7 @@ const Dashboard = ({ socket, ...props }) => {
         <Header>
           <div className="container">
             <div className="row justify-content-center align-items-center">
-              <div className="col-12 col-md-8 col-lg-6">
+              <div className="col-12 col-md-8 col-lg-5">
                 <PostForm
                   createNewPost={createNewPost}
                   data={data}

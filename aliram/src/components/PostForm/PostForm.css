@@ -69,3 +69,19 @@
 .postform--submit-button:active {
   background-color: rgb(6, 78, 172);
 }
+
+.page-header {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 54px;
+  margin-bottom: 0px;
+}
+
+.page-subheader {
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  text-align: center;
+  font-size: 14px;
+}
