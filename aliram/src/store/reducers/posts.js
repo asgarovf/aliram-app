@@ -67,7 +67,6 @@ export const postReducer = (state = initialState, action) => {
       for (let i = 0; i < posts.length; i++) {
         if (posts[i]._id === action.payload.id) {
           action.payload.comments.map((item) => {
-            console.log(doesContain(posts[i].comments, item));
             if (!doesContain(posts[i].comments, item)) {
               posts[i].comments.push(item);
             }

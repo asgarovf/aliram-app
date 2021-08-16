@@ -4,17 +4,7 @@ import SellingButton from "components/SellingButton/SellingButton";
 import { useEffect, useState } from "react";
 import { dateDifference } from "utils/dateDifference";
 
-const PostHeader = ({ post, commentRef }) => {
-  const [image, setImage] = useState("");
-
-  useEffect(() => {
-    const func = async () => {
-      const res = await axios.get("https://randomuser.me/api/");
-      setImage(res.data?.results[0]?.picture?.large);
-    };
-    func();
-  }, []);
-
+const PostHeader = ({ post, commentRef, index, image }) => {
   return (
     <div className="post-header">
       <div className="post-headline">
@@ -22,9 +12,10 @@ const PostHeader = ({ post, commentRef }) => {
           <div className="blue-circle"></div>
           <div className="profile-picture">
             <img
-              src={image}
+              src={image[index]?.picture?.large || ProfileImage}
               height="32"
               width="32"
+              alt=""
               style={{ borderRadius: "50%" }}
             />
           </div>

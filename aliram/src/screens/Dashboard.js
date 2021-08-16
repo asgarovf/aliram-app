@@ -17,6 +17,7 @@ import {
   pushNewPosts,
   setPosts,
 } from "store/actions/posts";
+import axios from "axios";
 
 const Dashboard = ({ socket, ...props }) => {
   const dispatch = useDispatch();
@@ -27,6 +28,16 @@ const Dashboard = ({ socket, ...props }) => {
       dispatch(addPost(data));
     });
   }, [socket]);
+
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    const func = async () => {
+      const res = await axios.get("https://randomuser.me/api/?results=50");
+      setImage(res.data?.results);
+    };
+    func();
+  }, []);
 
   useEffect(() => {
     socket.on("message", (data) => {
@@ -97,9 +108,14 @@ const Dashboard = ({ socket, ...props }) => {
                 </div>
               )}
 
-              {posts.map((item) => (
+              {posts.map((item, index) => (
                 <div className="col-12 col-lg-6 mt-4">
-                  <Post socket={socket} post={item} />
+                  <Post
+                    socket={socket}
+                    post={item}
+                    index={index}
+                    image={image}
+                  />
                 </div>
               ))}
             </Fragment>
