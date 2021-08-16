@@ -14,7 +14,9 @@ const PostForm = ({ createNewPost, data, setData }) => {
           <p className="page-header">alaram.az</p>
         </div>
         <div className="w-100">
-          <p className="page-subheader">Lorem ipsum dot amet blah blah</p>
+          <p className="page-subheader">
+            alıcıların istəklərinə uyğun satıcıların təklif platforması
+          </p>
         </div>
         <div className="d-flex">
           <div className="postform--input">
