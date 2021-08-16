@@ -102,6 +102,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  display: block;
 }
 
 .post-load-comments:hover {
@@ -115,13 +116,11 @@
 }
 
 .post-comment-box {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
   overflow: auto;
   max-height: 250px;
   min-height: 250px;
-  height: 100%;
 }
 
 .post-comment-input-wrapper {
