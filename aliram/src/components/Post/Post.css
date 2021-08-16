@@ -121,6 +121,7 @@
   overflow: auto;
   max-height: 250px;
   min-height: 250px;
+  height: 100%;
 }
 
 .post-comment-input-wrapper {
