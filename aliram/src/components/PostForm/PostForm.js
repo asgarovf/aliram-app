@@ -27,11 +27,11 @@ const PostForm = ({ createNewPost, data, setData }) => {
               value={data}
               onChange={(e) => setData(e.target.value)}
               type="text"
-              placeholder="Bu olsa..."
+              placeholder="..."
             />
           </div>
           <button type="submit" className="postform--submit-button">
-            Alaram
+            olsa, alaram!
           </button>
         </div>
       </div>
