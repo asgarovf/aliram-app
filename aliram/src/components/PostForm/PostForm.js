@@ -15,7 +15,7 @@ const PostForm = ({ createNewPost, data, setData }) => {
         </div>
         <div className="w-100">
           <p className="page-subheader">
-            alıcıların istəklərinə uyğun satıcıların təklif platforması
+            istəklərə uyğun təkliflər platforması
           </p>
         </div>
         <div className="d-flex">
