@@ -9,7 +9,7 @@ import store from "store/store";
 import "styles/bootstrap.css";
 import "styles/styles.css";
 
-const socket = io.connect("https://alaram.az/");
+const socket = io.connect();
 
 function App() {
   socket.on("connection");

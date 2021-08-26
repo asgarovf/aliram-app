@@ -4,7 +4,10 @@ import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
 const PostForm = ({ createNewPost, data, setData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    createNewPost.exec();
+
+    if (data.replace(/\s/g, "") != "") {
+      createNewPost.exec();
+    }
   };
 
   return (

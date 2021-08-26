@@ -1,4 +1,3 @@
-import { POSTS } from "common/constants/endpoints";
 import { useRequest } from "common/hooks/useRequest";
 import Header from "components/Header/Header";
 import Loader from "components/Loader/Loader";
@@ -18,6 +17,7 @@ import {
   setPosts,
 } from "store/actions/posts";
 import axios from "axios";
+import { telegramBaseURL } from "request/request";
 
 const Dashboard = ({ socket, ...props }) => {
   const dispatch = useDispatch();
@@ -48,10 +48,14 @@ const Dashboard = ({ socket, ...props }) => {
   const onSuccess = (res) => {
     dispatch(setPosts({ posts: res.data.posts, next: res.data.next }));
   };
-  const onSuccessPost = (res) => {
+  const onSuccessPost = async (res) => {
     dispatch(addPost(res.data.post));
     socket.emit("post", res.data.post);
     setData("");
+    await axios.post(telegramBaseURL + "/sendMessage", {
+      chat_id: process.env.REACT_APP_CHAT_ID,
+      text: `New post!, Content: ${res.data.post.text}`,
+    });
   };
   const onSuccessNewPost = (res) => {
     dispatch(pushNewPosts({ posts: res.data.posts, next: res.data.next }));
