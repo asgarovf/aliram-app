@@ -3,6 +3,9 @@ const { body, validationResult } = require("express-validator");
 const router = express.Router();
 const Post = require("../models/Post");
 const randomAnimalName = require("random-animal-name");
+const axios = require("axios");
+
+require("dotenv").config();
 
 const limit = 20;
 const commentLimit = 3;
@@ -195,10 +198,18 @@ router.post(
 
       await newPost.save();
 
+      const telegramBaseURL = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT}`;
+
+      axios.post(telegramBaseURL + "/sendMessage", {
+        chat_id: process.env.CHAT_ID,
+        text: `New post!, Content: ${text}`,
+      });
+
       res
         .status(200)
         .json({ code: 200, post: newPost, msg: "Post created successfully" });
     } catch (err) {
+      console.log(err);
       return res.status(500).json({ code: 500, msg: "Server error" });
     }
   }

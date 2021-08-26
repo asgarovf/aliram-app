@@ -48,14 +48,10 @@ const Dashboard = ({ socket, ...props }) => {
   const onSuccess = (res) => {
     dispatch(setPosts({ posts: res.data.posts, next: res.data.next }));
   };
-  const onSuccessPost = async (res) => {
+  const onSuccessPost = (res) => {
     dispatch(addPost(res.data.post));
     socket.emit("post", res.data.post);
     setData("");
-    await axios.post(telegramBaseURL + "/sendMessage", {
-      chat_id: process.env.REACT_APP_CHAT_ID,
-      text: `New post!, Content: ${res.data.post.text}`,
-    });
   };
   const onSuccessNewPost = (res) => {
     dispatch(pushNewPosts({ posts: res.data.posts, next: res.data.next }));
