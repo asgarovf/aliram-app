@@ -215,4 +215,21 @@ router.post(
   }
 );
 
+/**
+ * @Desc - Delet  post
+ * @Endpoint - "/api/posts/:id"
+ * @Method - POST
+ */
+
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Post.findByIdAndDelete(id);
+    res.status(204).json({ code: 200, msg: "Post deleted successfully" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ code: 500, msg: "Server error" });
+  }
+});
+
 module.exports = router;

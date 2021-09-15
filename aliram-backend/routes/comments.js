@@ -5,6 +5,7 @@ const { body, validationResult } = require("express-validator");
 const Comment = require("../models/Comment");
 const mongoose = require("mongoose");
 const randomAnimalName = require("random-animal-name");
+const axios = require("axios");
 
 /**
  * @Desc - Create comment for a post
@@ -46,6 +47,13 @@ router.post(
 
       await newComment.save();
       await post.save();
+
+      const telegramBaseURL = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT}`;
+
+      axios.post(telegramBaseURL + "/sendMessage", {
+        chat_id: process.env.CHAT_ID,
+        text: `New comment!, Post: ${post.title},  Content: ${text}`,
+      });
 
       return res.status(200).json({
         code: 200,
