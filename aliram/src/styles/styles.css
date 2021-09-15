@@ -21,3 +21,11 @@ body {
   display: inline-block;
   width: 50%;
 }
+
+.admin-input {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 1px solid darkgray;
+}

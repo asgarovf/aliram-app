@@ -19,7 +19,7 @@ import {
 import axios from "axios";
 import { telegramBaseURL } from "request/request";
 
-const Dashboard = ({ socket, ...props }) => {
+const Dashboard = ({ socket, setPassword, password, ...props }) => {
   const dispatch = useDispatch();
   const { posts, next } = useSelector((state) => state.posts);
 
@@ -107,10 +107,11 @@ const Dashboard = ({ socket, ...props }) => {
                   <Loader />
                 </div>
               )}
-
               {posts.map((item, index) => (
                 <div className="col-12 col-lg-6 mt-4">
                   <Post
+                    setPassword={setPassword}
+                    password={password}
                     socket={socket}
                     post={item}
                     index={index}

@@ -6,6 +6,18 @@
   color: white;
 }
 
+@media (min-width: 0px) {
+  .selling-button {
+    padding: 6px 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .selling-button {
+    padding: 8px 22px;
+  }
+}
+
 .selling-button:hover {
   background-color: rgb(6, 78, 172);
 }

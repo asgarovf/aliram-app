@@ -14,3 +14,6 @@ export const apiPushNewComments = (postId, commentPage) =>
     method: "get",
     url: `${POSTS + "id/" + postId + "/" + commentPage}`,
   });
+
+export const apiDeletePost = (id) =>
+  axiosInstance({ method: "delete", url: POSTS + `${id}` });
