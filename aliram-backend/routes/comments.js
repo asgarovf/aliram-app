@@ -52,7 +52,7 @@ router.post(
 
       axios.post(telegramBaseURL + "/sendMessage", {
         chat_id: process.env.CHAT_ID,
-        text: `New comment!, Post: ${post.title},  Content: ${text}`,
+        text: `New comment!, Post: ${post.text},  Content: ${text}`,
       });
 
       return res.status(200).json({
