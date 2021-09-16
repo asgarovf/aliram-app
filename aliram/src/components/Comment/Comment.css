@@ -6,7 +6,7 @@
 
 .comment-comment-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .comment-comment-name {
@@ -14,7 +14,14 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
-  margin-left: 8px;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.comment-image {
+  margin-right: 8px;
 }
 
 .comment-comment-text {
@@ -31,4 +38,5 @@
   font-weight: normal;
   font-size: 10px;
   line-height: 15px;
+  margin-top: 8px;
 }

@@ -32,14 +32,6 @@ const Dashboard = ({ socket, setPassword, password, ...props }) => {
   const [image, setImage] = useState([]);
 
   useEffect(() => {
-    const func = async () => {
-      const res = await axios.get("https://randomuser.me/api/?results=50");
-      setImage(res.data?.results);
-    };
-    func();
-  }, []);
-
-  useEffect(() => {
     socket.on("message", (data) => {
       dispatch(addComment({ id: data.id, comment: data.comment }));
     });
