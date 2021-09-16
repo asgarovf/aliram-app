@@ -11,6 +11,7 @@ import { apiDeletePost } from "request/api/postApi";
 import { useDispatch } from "react-redux";
 import { setPosts } from "store/actions/posts";
 import { useSelector } from "react-redux";
+import ProfileImg from "assets/images/a-circle.png";
 
 const PostHeader = ({
   post,
@@ -43,7 +44,7 @@ const PostHeader = ({
           <div className="blue-circle"></div>
           <div className="profile-picture">
             <img
-              src={image[index]?.picture?.large || ProfileImage}
+              src={ProfileImg}
               height="32"
               width="32"
               alt=""
@@ -51,7 +52,7 @@ const PostHeader = ({
             />
           </div>
           <div>
-            <span className="post-name">{post?.title || "İstifadəçi"}</span>
+            <span className="post-name">{post?.text}</span>
           </div>
         </div>
         <div className="d-flex flex-row align-items-center relative">
@@ -75,7 +76,7 @@ const PostHeader = ({
         </div>
       </div>
       <div className="post-content">
-        <span className="post-text">{post?.text}</span>
+        {/* <span className="post-text">{post?.text}</span> */}
       </div>
       <div className="post-details">
         <span className="post-date">{dateDifference(post?.date_created)}</span>

@@ -29,7 +29,7 @@ const Dashboard = ({ socket, setPassword, password, ...props }) => {
     });
   }, [socket]);
 
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
 
   useEffect(() => {
     const func = async () => {
