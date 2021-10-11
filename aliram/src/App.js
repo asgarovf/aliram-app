@@ -9,7 +9,7 @@ import store from "store/store";
 import "styles/bootstrap.css";
 import "styles/styles.css";
 
-const socket = io.connect();
+const socket = io.connect("/api");
 
 function App() {
   socket.on("connection");

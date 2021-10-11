@@ -16,8 +16,6 @@ import {
   pushNewPosts,
   setPosts,
 } from "store/actions/posts";
-import axios from "axios";
-import { telegramBaseURL } from "request/request";
 
 const Dashboard = ({ socket, setPassword, password, ...props }) => {
   const dispatch = useDispatch();
